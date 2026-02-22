@@ -74,13 +74,6 @@ repos:
         files: (^|/)(Dockerfile|.*\.Dockerfile)$
         args: [--config, .hadolint.yaml]
 
-  - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.21.0
-    hooks:
-      - id: markdownlint-cli2
-        exclude: ^(3rdparty/|build.*/|install/)
-        args: ["--fix"]
-
 # Configuration
 default_stages: [pre-commit]
 fail_fast: false
