@@ -86,7 +86,6 @@ void CompareSplit(int rank, int partner, int keep_cnt, std::vector<int> *local) 
   local->swap(new_local);
 }
 
-// NOLINTNEXTLINE(misc-no-recursion)
 void OddEvenMerge(int lo, int n, int r, std::vector<std::pair<int, int>> *comps) {
   const int m = r * 2;
   if (m < n) {
@@ -100,7 +99,6 @@ void OddEvenMerge(int lo, int n, int r, std::vector<std::pair<int, int>> *comps)
   }
 }
 
-// NOLINTNEXTLINE(misc-no-recursion)
 void OddEvenMergeSort(int lo, int n, std::vector<std::pair<int, int>> *comps) {
   if (n > 1) {
     const int m = n / 2;
@@ -110,7 +108,7 @@ void OddEvenMergeSort(int lo, int n, std::vector<std::pair<int, int>> *comps) {
   }
 }
 
-}  // namespace
+}  
 
 CheremkhinARadixSortBatcherMPI::CheremkhinARadixSortBatcherMPI(const InType &in) {
   SetTypeOfTask(GetStaticTypeOfTask());
@@ -131,7 +129,6 @@ bool CheremkhinARadixSortBatcherMPI::PreProcessingImpl() {
   return true;
 }
 
-// NOLINTNEXTLINE(readability-function-cognitive-complexity)
 bool CheremkhinARadixSortBatcherMPI::RunImpl() {
   int rank = 0;
   int size = 0;
@@ -171,7 +168,6 @@ bool CheremkhinARadixSortBatcherMPI::RunImpl() {
         MPI_Barrier(MPI_COMM_WORLD);
       }
     } else {
-      // Fallback for non power-of-two number of ranks.
       for (int phase = 0; phase < size; ++phase) {
         int partner = -1;
         if ((phase % 2) == 0) {
