@@ -1,8 +1,7 @@
 #pragma once
 
-#include "task/include/task.hpp"
-
 #include "cheremkhin_a_radix_sort_batcher/common/include/common.hpp"
+#include "task/include/task.hpp"
 
 namespace cheremkhin_a_radix_sort_batcher {
 
