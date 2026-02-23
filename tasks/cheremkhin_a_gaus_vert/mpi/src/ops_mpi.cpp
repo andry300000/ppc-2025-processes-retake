@@ -74,7 +74,6 @@ bool CheremkhinAGausVertMPI::PreProcessingImpl() {
   return true;
 }
 
-
 bool CheremkhinAGausVertMPI::RunImpl() {
   const auto &in = GetInput();
 
@@ -96,7 +95,7 @@ bool CheremkhinAGausVertMPI::RunImpl() {
     }
   }
 
-  std::vector<double> b = in.b;  
+  std::vector<double> b = in.b;
   std::vector<double> x(static_cast<std::size_t>(n), 0.0);
 
   for (int k = 0; k < n; ++k) {
